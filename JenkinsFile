@@ -1,7 +1,6 @@
 pipeline{
         agent any
         stages{
-            stage('docker and compose'){
                 steps{
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://gitlab.com/qacdevops/chaperootodo_client.git']]])                
          }
@@ -21,7 +20,7 @@ pipeline{
                 steps{ 
                 sh 'sudo chmod +x /usr/local/bin/docker-compose'
                 }
-	            }
+	            
             }
         }
      
